@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  server:
+    container_name: shares-server
+    restart: always
+    tty: true
+
+  database:
+    container_name: shares-database
+    restart: always
+    tty: true
