@@ -14,4 +14,4 @@ type User struct {
 	CreatedAt time.Time `json:"created_at"`
 }
 
-type users []User
+type Users []*User

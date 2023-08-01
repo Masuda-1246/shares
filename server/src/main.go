@@ -13,5 +13,6 @@ func main() {
 	defer db.Close()
 	r := router.NewRouter()
 	r.InitUserRouter(db)
+	r.InitPostRouter(db)
 	r.Serve()
 }
