@@ -11,11 +11,11 @@ import (
 
 // Handlerはハンドラーを表します
 type PostHandler struct {
-	pu usecase.IPostUseCase
+	pu usecase.IPostUsecase
 }
 
 // NewPostHandlerは新しいPostHandlerを初期化し構造体のポインタを返します
-func NewPostHandler(pu usecase.IPostUseCase) *PostHandler {
+func NewPostHandler(pu usecase.IPostUsecase) *PostHandler {
 	return &PostHandler{
 		pu: pu,
 	}

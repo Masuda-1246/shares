@@ -20,7 +20,7 @@ func NewCommentRepository(db *sql.DB) *CommentRepository {
 
 func (cr *CommentRepository) GetByID(id string) (*entity.Comment, error) {
 	comment := &entity.Comment{}
-	err := cr.db.QueryRow("SELECT * FROM comments WHERE id = ?", id).Scan(&comment.ID, &comment.UserID, &comment.PostID, &comment.Content,&comment.Type, &comment.CreatedAt)
+	err := cr.db.QueryRow("SELECT * FROM comments WHERE id = ?", id).Scan(&comment.ID, &comment.UserID, &comment.PostID, &comment.Content, &comment.Type, &comment.CreatedAt)
 	if err != nil {
 		return nil, err
 	}

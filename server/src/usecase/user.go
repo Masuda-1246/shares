@@ -5,14 +5,14 @@ import (
 	"github.com/Masuda-1246/shares/domain/repository"
 )
 
-var _ IUserUseCase = &UserUseCase{}
+var _ IUserUsecase = &UserUsecase{}
 
-type UserUseCase struct {
+type UserUsecase struct {
 	userRepository repository.UserRepository
 }
 
-// UserUseCaseはユーザーに関するユースケースを担当します
-type IUserUseCase interface {
+// UserUsecaseはユーザーに関するユースケースを担当します
+type IUserUsecase interface {
 	// GetByIDはIDを指定してユーザーを取得します
 	GetByID(id string) (*entity.User, error)
 	// GetByEmailはEmailを指定してユーザーを取得します
@@ -25,35 +25,34 @@ type IUserUseCase interface {
 	DeleteUser(id string) error
 }
 
-// NewUserUseCaseは新しいUserUseCaseを初期化し構造体のポインタを返します
-func NewUserUseCase(ur repository.UserRepository) IUserUseCase {
-	return &UserUseCase{
+// NewUserUsecaseは新しいUserUsecaseを初期化し構造体のポインタを返します
+func NewUserUsecase(ur repository.UserRepository) IUserUsecase {
+	return &UserUsecase{
 		userRepository: ur,
 	}
 }
 
 // GetByIDはIDを指定してユーザーを取得します
-func (uu *UserUseCase) GetByID(id string) (*entity.User, error) {
+func (uu *UserUsecase) GetByID(id string) (*entity.User, error) {
 	return uu.userRepository.GetByID(id)
 }
 
 // GetByEmailはEmailを指定してユーザーを取得します
-func (uu *UserUseCase) GetByEmail(email string) (*entity.User, error) {
+func (uu *UserUsecase) GetByEmail(email string) (*entity.User, error) {
 	return uu.userRepository.GetByEmail(email)
 }
 
 // CreateUserはユーザーを作成します
-func (uu *UserUseCase) CreateUser(user *entity.User) error {
+func (uu *UserUsecase) CreateUser(user *entity.User) error {
 	return uu.userRepository.CreateUser(user)
 }
 
 // UpdateUserはユーザーを更新します
-func (uu *UserUseCase) UpdateUser(user *entity.User) error {
+func (uu *UserUsecase) UpdateUser(user *entity.User) error {
 	return uu.userRepository.UpdateUser(user)
 }
 
 // DeleteUserはユーザーを削除します
-func (uu *UserUseCase) DeleteUser(id string) error {
+func (uu *UserUsecase) DeleteUser(id string) error {
 	return uu.userRepository.DeleteUser(id)
 }
-

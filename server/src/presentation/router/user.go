@@ -3,14 +3,14 @@ package router
 import (
 	"database/sql"
 
-	"github.com/Masuda-1246/shares/usecase"
 	"github.com/Masuda-1246/shares/infrastructure/persistence"
 	"github.com/Masuda-1246/shares/presentation/handler"
+	"github.com/Masuda-1246/shares/usecase"
 )
 
 func (r *Router) InitUserRouter(db *sql.DB) {
 	ur := persistence.NewUserRepository(db)
-	uu := usecase.NewUserUseCase(ur)
+	uu := usecase.NewUserUsecase(ur)
 	uh := handler.NewUserHandler(uu)
 
 	g := r.Engine.Group("/user")

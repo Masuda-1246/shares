@@ -1,9 +1,9 @@
 package persistence
 
 import (
+	"database/sql"
 	"github.com/Masuda-1246/shares/domain/entity"
 	"github.com/Masuda-1246/shares/domain/repository"
-	"database/sql"
 )
 
 var _ repository.PostRepository = &PostRepository{}

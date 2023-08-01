@@ -3,14 +3,14 @@ package router
 import (
 	"database/sql"
 
-	"github.com/Masuda-1246/shares/usecase"
 	"github.com/Masuda-1246/shares/infrastructure/persistence"
 	"github.com/Masuda-1246/shares/presentation/handler"
+	"github.com/Masuda-1246/shares/usecase"
 )
 
 func (r *Router) InitFavoriteRouter(db *sql.DB) {
 	fr := persistence.NewFavoriteRepository(db)
-	fu := usecase.NewFavoriteUseCase(fr)
+	fu := usecase.NewFavoriteUsecase(fr)
 	fh := handler.NewFavoriteHandler(fu)
 
 	g := r.Engine.Group("/favorite")

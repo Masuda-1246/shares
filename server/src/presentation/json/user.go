@@ -1,25 +1,25 @@
 package json
 
 import (
-	"time"
 	"github.com/Masuda-1246/shares/domain/entity"
+	"time"
 )
 
 type UserJson struct {
-	ID       string `json:"id"`
-	Name     string `json:"name"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	GithubUrl string `json:"github_url"`
+	ID        string    `json:"id"`
+	Name      string    `json:"name"`
+	Email     string    `json:"email"`
+	Password  string    `json:"password"`
+	GithubUrl string    `json:"github_url"`
 	CreatedAt time.Time `json:"created_at"`
 }
 
 func UserJsonToEntity(userJson *UserJson) *entity.User {
 	return &entity.User{
-		ID: userJson.ID,
-		Name: userJson.Name,
-		Email: userJson.Email,
-		Password: userJson.Password,
+		ID:        userJson.ID,
+		Name:      userJson.Name,
+		Email:     userJson.Email,
+		Password:  userJson.Password,
 		GithubUrl: userJson.GithubUrl,
 		CreatedAt: userJson.CreatedAt,
 	}
@@ -27,10 +27,10 @@ func UserJsonToEntity(userJson *UserJson) *entity.User {
 
 func UserEntityToJson(user *entity.User) *UserJson {
 	return &UserJson{
-		ID: user.ID,
-		Name: user.Name,
-		Email: user.Email,
-		Password: user.Password,
+		ID:        user.ID,
+		Name:      user.Name,
+		Email:     user.Email,
+		Password:  user.Password,
 		GithubUrl: user.GithubUrl,
 		CreatedAt: user.CreatedAt,
 	}

@@ -11,11 +11,11 @@ import (
 
 // Handlerはハンドラーを表します
 type FavoriteHandler struct {
-	fu usecase.IFavoriteUseCase
+	fu usecase.IFavoriteUsecase
 }
 
 // NewFavoriteHandlerは新しいFavoriteHandlerを初期化し構造体のポインタを返します
-func NewFavoriteHandler(fu usecase.IFavoriteUseCase) *FavoriteHandler {
+func NewFavoriteHandler(fu usecase.IFavoriteUsecase) *FavoriteHandler {
 	return &FavoriteHandler{
 		fu: fu,
 	}

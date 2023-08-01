@@ -11,11 +11,11 @@ import (
 
 // Handlerはハンドラーを表します
 type UserHandler struct {
-	uu usecase.IUserUseCase
+	uu usecase.IUserUsecase
 }
 
 // NewUserHandlerは新しいUserHandlerを初期化し構造体のポインタを返します
-func NewUserHandler(uu usecase.IUserUseCase) *UserHandler {
+func NewUserHandler(uu usecase.IUserUsecase) *UserHandler {
 	return &UserHandler{
 		uu: uu,
 	}
