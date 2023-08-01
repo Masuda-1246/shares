@@ -1,5 +1,5 @@
 ## Build
-FROM golang:1.17-buster AS build
+FROM golang:latest AS build
 
 WORKDIR /go/src/github.com/Masuda-1246/shares
 

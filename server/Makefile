@@ -17,6 +17,7 @@ DOCKER_COMPOSE_LOCAL_SERVER     := $(DOCKER_FILE_DIR)/docker-compose.local.serve
 DOCKER_EXEC                     := docker exec -it
 GITHUB_REPOSITORY_NAME          := shares
 DB_CONTAINER_NAME               := $(GITHUB_REPOSITORY_NAME)-database
+SERVER_CONTAINER_NAME           := $(GITHUB_REPOSITORY_NAME)-server
 
 # dir
 SRC_DIR := ./src
@@ -57,6 +58,10 @@ del-data:
 .PHONY: attach-db
 attach-db: ## dockerのdbコンテナにアクセスする
 	$(DOCKER_EXEC) $(DB_CONTAINER_NAME) bash
+
+.PHONY: attach-server
+attach-server: ## dockerのserverコンテナにアクセスする
+	$(DOCKER_EXEC) $(SERVER_CONTAINER_NAME) bash
 
 .PHONY: lint
 lint: ## goのコードを整形する
