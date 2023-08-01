@@ -14,5 +14,6 @@ func main() {
 	r := router.NewRouter()
 	r.InitUserRouter(db)
 	r.InitPostRouter(db)
+	r.InitFavoriteRouter(db)
 	r.Serve()
 }
