@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:8080
-    # volumes:
-    # - ../src:/go/src/github.com/Doer-org/shares-1
+    volumes:
+    - ../src:/go/src/github.com/Masuda-1246/shares
     environment:
       - ENVIRONMENT=${ENVIRONMENT}
       - APIKEY=${APIKEY}
